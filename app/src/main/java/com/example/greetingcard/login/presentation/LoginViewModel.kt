@@ -5,10 +5,18 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class LoginViewModel : ViewModel() {
-    private var _number = MutableLiveData<Int>(0)
-    val number : LiveData<Int> = _number
+    private var _username = MutableLiveData<String>()
+    val username : LiveData<String> = _username
 
-    fun onChangedNumber() {
-        _number.value = _number.value!! + 1
+    private var _password = MutableLiveData<String>()
+    val password : LiveData<String> = _password
+
+
+    fun onChangeUsername(username : String) {
+        _username.value = username
+    }
+
+    fun onChangePassword (password : String) {
+        _password.value = password
     }
 }
